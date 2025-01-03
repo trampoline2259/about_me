@@ -26,10 +26,12 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; /* Start content from the top */
+      justify-content: flex-start;
       align-items: center;
       font-family: 'Source Code Pro', monospace;
-      min-height: 100vh; /* Ensures full height without cutting off */
+      min-height: 100vh;
+      background-color: #f8f9fa;
+      overflow-x: hidden;
     }
 
     h1, p, ul {
@@ -38,76 +40,109 @@
 
     .language-list {
       width: 80%;
+      text-align: left;
       margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards ease-in-out;
     }
 
     .language-list h1 {
       font-size: 2rem;
       position: relative;
+      padding-left: 20px;
     }
 
-    /* Specific font styles for different languages */
     .phags-pa {
       font-family: 'Noto Sans Phags-pa', sans-serif;
-      text-align: left; /* Left align Phags-pa text */
     }
 
     .japanese {
       font-family: 'Noto Sans JP', sans-serif;
-      text-align: left; /* Left align Japanese text */
     }
 
     .korean {
       font-family: 'Noto Sans KR', sans-serif;
-      text-align: left; /* Left align Korean text */
     }
 
     .hindi {
       font-family: 'Noto Sans Devanagari', sans-serif;
-      text-align: left; /* Left align Hindi text */
     }
 
     .chinese {
       font-family: 'Noto Sans SC', sans-serif;
-      text-align: left; /* Left align Chinese text */
     }
 
-    /* Positioning each line with a slant effect */
+    ul {
+      text-align: left;
+      width: 80%;
+    }
+
     .language-list h1::before {
       content: '';
       position: absolute;
       width: 2px;
       height: 100%;
       background-color: black;
-      left: calc(-1 * var(--offset, 0) * 2px); /* Dynamic offset */
+      left: 0;
     }
 
     .language-list h1.phags-pa::before {
-      --offset: 1;
+      background-color: #ff6b6b;
     }
 
     .language-list h1.japanese::before {
-      --offset: 2;
+      background-color: #6b5b95;
     }
 
     .language-list h1.korean::before {
-      --offset: 3;
+      background-color: #feb236;
     }
 
     .language-list h1.hindi::before {
-      --offset: 4;
+      background-color: #9b59b6;
     }
 
     .language-list h1.chinese::before {
-      --offset: 5;
+      background-color: #2ecc71;
     }
 
-    /* Left align bullet points */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    p, ul {
+      animation: slideIn 1s forwards ease-in-out;
+    }
+
     ul {
-      text-align: left;
-      width: 80%;
+      padding-left: 20px;
     }
 
+    /* Ensuring compatibility for browsers blocking trackers */
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -124,7 +159,7 @@
   <p>As a Math Club member, I have developed advanced mathematical reasoning, achieving a high RIT score of 259 in Operations and Algebraic Thinking.</p>
   <p>I also compete in the First Lego League, which emphasizes teamwork, innovation, and programming expertise.</p>
   <p>I attend Ladue Middle School, a highly-regarded public middle school in Saint Louis, Missouri, serving 1,018 students in grades 6-8. It is part of the Ladue School District, which is ranked 8th out of 386 districts in the state and has a 5-star rating from SchoolDigger.</p>
-  <p>I am a world class Chat Gpter</p>
+  <p>I am a world-class Chat Gpter</p>
   <p>My achievements include:</p>
 
   <ul>
