@@ -26,25 +26,29 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start; /* Start content from the top */
       align-items: center;
       font-family: 'Source Code Pro', monospace;
       text-align: center;
       min-height: 100vh; /* Ensures full height without cutting off */
     }
 
-    h1, p {
+    h1, p, ul {
       margin: 10px 0;
     }
 
     .language-list {
+      width: 80%;
       margin-top: 20px;
       font-weight: normal;
     }
 
+    .language-list h1 {
+      font-size: 2rem;
+    }
+
     .language-list p {
-      font-size: 1.2rem;
-      margin: 5px 0;
+      font-size: 1rem;
     }
 
     /* Specific font styles for different languages */
@@ -71,6 +75,7 @@
     /* Apply a diagonal slant effect */
     .language-list h1.phags-pa, .language-list h1.japanese, .language-list h1.korean, .language-list h1.hindi, .language-list h1.chinese {
       position: relative;
+      left: 0; /* Align to the left */
     }
 
     .language-list .slanted-1 {
