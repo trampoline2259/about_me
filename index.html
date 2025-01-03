@@ -29,7 +29,6 @@
       justify-content: flex-start; /* Start content from the top */
       align-items: center;
       font-family: 'Source Code Pro', monospace;
-      text-align: center;
       min-height: 100vh; /* Ensures full height without cutting off */
     }
 
@@ -40,7 +39,6 @@
     .language-list {
       width: 80%;
       margin-top: 20px;
-      font-weight: normal;
     }
 
     .language-list h1 {
@@ -54,59 +52,45 @@
     /* Specific font styles for different languages */
     .phags-pa {
       font-family: 'Noto Sans Phags-pa', sans-serif;
+      text-align: left; /* Left align Phags-pa text */
     }
 
     .japanese {
       font-family: 'Noto Sans JP', sans-serif;
+      text-align: left; /* Left align Japanese text */
     }
 
     .korean {
       font-family: 'Noto Sans KR', sans-serif;
+      text-align: left; /* Left align Korean text */
     }
 
     .hindi {
       font-family: 'Noto Sans Devanagari', sans-serif;
+      text-align: left; /* Left align Hindi text */
     }
 
     .chinese {
       font-family: 'Noto Sans SC', sans-serif;
+      text-align: left; /* Left align Chinese text */
     }
 
-    /* Apply a diagonal slant effect */
-    .language-list h1.phags-pa, .language-list h1.japanese, .language-list h1.korean, .language-list h1.hindi, .language-list h1.chinese {
-      position: relative;
-      left: 0; /* Align to the left */
+    /* Left align bullet points */
+    ul {
+      text-align: left;
+      width: 80%;
     }
 
-    .language-list .slanted-1 {
-      left: 10px; /* Shift the second line slightly to the right */
-    }
-
-    .language-list .slanted-2 {
-      left: 20px; /* Shift the third line more */
-    }
-
-    .language-list .slanted-3 {
-      left: 30px; /* Shift the fourth line more */
-    }
-
-    .language-list .slanted-4 {
-      left: 40px; /* Shift the fifth line more */
-    }
-
-    .language-list .slanted-5 {
-      left: 50px; /* Shift the sixth line more */
-    }
   </style>
 </head>
 <body>
     <div class="language-list">
     <h1>My name is Anjney</h1>
-    <h1 class="phags-pa slanted-1">ᠮᠡᠷᠡ ᠨᠡᠮᠡ ᠠᠨᠵᠡᠢ ᠪᠡᠷᠡᠩᠵᠢᠭ ᠰᠢᠳᠠᠨᠢ ᠠᠶᠢᠢᠢ ᠠᠢᠢᠡᠯᠡᠨ</h1> <!-- Phags-pa -->
-    <h1 class="japanese slanted-2">私の名前はアーンジェイです、私は東京に住んでいます。</h1> <!-- Japanese -->
-    <h1 class="korean slanted-3">제 이름은 안제이입니다. 저는 서울에서 살고 있습니다.</h1> <!-- Korean -->
-    <h1 class="hindi slanted-4">मेरा नाम अंजने है। मैं भारत से हूँ।</h1> <!-- Hindi -->
-    <h1 class="chinese slanted-5">我的名字是安杰，我住在中国。</h1> <!-- Simplified Chinese -->
+    <h1 class="phags-pa">ᠮᠡᠷᠡ ᠨᠡᠮᠡ ᠠᠨᠵᠡᠢ ᠪᠡᠷᠡᠩᠵᠢᠭ ᠰᠢᠳᠠᠨᠢ ᠠᠶᠢᠢᠢ ᠠᠢᠢᠡᠯᠡᠨ</h1> <!-- Phags-pa -->
+    <h1 class="japanese">私の名前はアーンジェイです、私は東京に住んでいます。</h1> <!-- Japanese -->
+    <h1 class="korean">제 이름은 안제이입니다. 저는 서울에서 살고 있습니다.</h1> <!-- Korean -->
+    <h1 class="hindi">मेरा नाम अंजने है। मैं भारत से हूँ。</h1> <!-- Hindi -->
+    <h1 class="chinese">我的名字是安杰，我住在中国。</h1> <!-- Simplified Chinese -->
   </div>
   <p>I am a "professional programmer" and I play guitar at the Trinity Music College of London.</p>
   <p>Additionally, I am an active participant in Science Olympiad events such as Experimental Design, Reach for the Stars, and Disease Detectives. These experiences have honed my analytical and problem-solving skills.</p>
