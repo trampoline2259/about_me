@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
+  
+  <!-- Load different fonts for different scripts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Phags-pa&display=swap" rel="stylesheet"> <!-- Phags-pa -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet"> <!-- Japanese -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"> <!-- Korean -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet"> <!-- Hindi -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet"> <!-- Simplified Chinese -->
+  
   <title>About Me</title>
   <style>
     * {
@@ -12,22 +21,89 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body, html {
       height: 100%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       font-family: 'Source Code Pro', monospace;
+      text-align: center;
     }
 
-    p {
-      font-weight: bold;
+    h1, p {
+      margin: 10px 0;
+    }
+
+    .language-list {
+      margin-top: 20px;
+      font-weight: normal;
+    }
+
+    .language-list p {
+      font-size: 1.2rem;
+      margin: 5px 0;
+    }
+
+    /* Specific font styles for different languages */
+    .phags-pa {
+      font-family: 'Noto Sans Phags-pa', sans-serif;
+    }
+
+    .japanese {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .korean {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .hindi {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+    }
+
+    .chinese {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    /* Apply a diagonal slant effect */
+    .language-list p {
+      position: relative;
+    }
+
+    .language-list .slanted-1 {
+      left: 10px; /* Shift the second line slightly to the right */
+    }
+
+    .language-list .slanted-2 {
+      left: 20px; /* Shift the third line more */
+    }
+
+    .language-list .slanted-3 {
+      left: 30px; /* Shift the fourth line more */
+    }
+
+    .language-list .slanted-4 {
+      left: 40px; /* Shift the fifth line more */
+    }
+
+    .language-list .slanted-5 {
+      left: 50px; /* Shift the sixth line more */
     }
   </style>
 </head>
 <body>
-  <h1>Hi I am Anjney Kumar</h1>
-  <p>I am a "professional programmer" and I play guitar at the trinity music college of london</p>
+  <h1>Hi, I am Anjney Kumar</h1>
+  <p>I am a "professional programmer" and I play guitar at the Trinity Music College of London.</p>
+
+  <div class="language-list">
+    <p>My name is Anjney</p>
+    <p class="phags-pa slanted-1">ᠮᠡᠷᠡ ᠨᠡᠮᠡ ᠡᠴᠡᠨᠬᠡ</p> <!-- Phags-pa -->
+    <p class="japanese slanted-2">私の名前はアンジェイです</p> <!-- Japanese -->
+    <p class="korean slanted-3">제 이름은 안제이입니다</p> <!-- Korean -->
+    <p class="hindi slanted-4">मेरा नाम अंजने है</p> <!-- Hindi -->
+    <p class="chinese slanted-5">我的名字是安杰</p> <!-- Simplified Chinese -->
+  </div>
 </body>
 </html>
