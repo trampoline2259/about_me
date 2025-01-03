@@ -43,10 +43,7 @@
 
     .language-list h1 {
       font-size: 2rem;
-    }
-
-    .language-list p {
-      font-size: 1rem;
+      position: relative;
     }
 
     /* Specific font styles for different languages */
@@ -75,6 +72,36 @@
       text-align: left; /* Left align Chinese text */
     }
 
+    /* Positioning each line with a slant effect */
+    .language-list h1::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background-color: black;
+      left: calc(-1 * var(--offset, 0) * 2px); /* Dynamic offset */
+    }
+
+    .language-list h1.phags-pa::before {
+      --offset: 1;
+    }
+
+    .language-list h1.japanese::before {
+      --offset: 2;
+    }
+
+    .language-list h1.korean::before {
+      --offset: 3;
+    }
+
+    .language-list h1.hindi::before {
+      --offset: 4;
+    }
+
+    .language-list h1.chinese::before {
+      --offset: 5;
+    }
+
     /* Left align bullet points */
     ul {
       text-align: left;
@@ -84,7 +111,7 @@
   </style>
 </head>
 <body>
-    <div class="language-list">
+  <div class="language-list">
     <h1>My name is Anjney</h1>
     <h1 class="phags-pa">ᠮᠡᠷᠡ ᠨᠡᠮᠡ ᠠᠨᠵᠡᠢ ᠪᠡᠷᠡᠩᠵᠢᠭ ᠰᠢᠳᠠᠨᠢ ᠠᠶᠢᠢᠢ ᠠᠢᠢᠡᠯᠡᠨ</h1> <!-- Phags-pa -->
     <h1 class="japanese">私の名前はアーンジェイです、私は東京に住んでいます。</h1> <!-- Japanese -->
