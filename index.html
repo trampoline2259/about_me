@@ -20,17 +20,16 @@
 
     body, html {
       height: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
       font-family: Arial, sans-serif;
-      overflow: hidden;
       background-color: #f8f9fa;
+      overflow-x: hidden;
     }
 
     .container {
       display: flex;
       height: 100vh;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
       width: 100vw;
     }
 
@@ -147,33 +146,6 @@
       cursor: pointer;
     }
 
-    .command-line {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      width: 80%;
-      max-width: 600px;
-      background-color: black;
-      color: lime;
-      font-family: monospace;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .command-line .loading {
-      width: 0;
-      height: 5px;
-      background-color: lime;
-      margin-top: 5px;
-      animation: load 3s linear forwards;
-    }
-
-    @keyframes load {
-      to {
-        width: 100%;
-      }
-    }
-
     img {
       max-width: 100px;
       margin: 10px;
@@ -231,10 +203,6 @@
       <h2>Software Languages</h2>
       <p>HTML, Bash, and JavaScript.</p>
     </section>
-  </div>
-  <div class="command-line">
-    <p>Running: sudo apt update...</p>
-    <div class="loading"></div>
   </div>
 
   <script>
