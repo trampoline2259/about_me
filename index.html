@@ -3,16 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Load different fonts for different scripts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Phags-pa&display=swap" rel="stylesheet"> <!-- Phags-pa -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet"> <!-- Japanese -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"> <!-- Korean -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet"> <!-- Hindi -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet"> <!-- Simplified Chinese -->
+  <!-- Load fonts for Hindi -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
 
   <title>About Me</title>
   <style>
@@ -25,86 +21,54 @@
     body, html {
       height: 100%;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-      font-family: 'Source Code Pro', monospace;
+      font-family: Arial, sans-serif;
       min-height: 100vh;
       background-color: #f8f9fa;
-      overflow-x: hidden;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
     }
 
-    h1, p, ul {
+    section {
+      scroll-snap-align: start;
+      flex: none;
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    h1, h2, p, ul {
       margin: 10px 0;
+      text-align: center;
     }
 
-    .language-list {
-      width: 80%;
+    ul {
       text-align: left;
-      margin-top: 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 1s forwards ease-in-out;
-    }
-
-    .language-list h1 {
-      font-size: 2rem;
-      position: relative;
+      width: 80%;
       padding-left: 20px;
     }
 
-    .phags-pa {
-      font-family: 'Noto Sans Phags-pa', sans-serif;
+    section:nth-child(even) {
+      background-color: #e9ecef;
     }
 
-    .japanese {
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-
-    .korean {
-      font-family: 'Noto Sans KR', sans-serif;
+    section:nth-child(odd) {
+      background-color: #ffffff;
     }
 
     .hindi {
       font-family: 'Noto Sans Devanagari', sans-serif;
     }
 
-    .chinese {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    ul {
-      text-align: left;
-      width: 80%;
-    }
-
-    .language-list h1::before {
-      content: '';
-      position: absolute;
-      width: 2px;
-      height: 100%;
-      background-color: black;
-      left: 0;
-    }
-
-    .language-list h1.phags-pa::before {
-      background-color: #ff6b6b;
-    }
-
-    .language-list h1.japanese::before {
-      background-color: #6b5b95;
-    }
-
-    .language-list h1.korean::before {
-      background-color: #feb236;
-    }
-
-    .language-list h1.hindi::before {
-      background-color: #9b59b6;
-    }
-
-    .language-list h1.chinese::before {
-      background-color: #2ecc71;
+    .animated {
+      animation: fadeIn 1s ease-in-out;
     }
 
     @keyframes fadeIn {
@@ -118,26 +82,6 @@
       }
     }
 
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    p, ul {
-      animation: slideIn 1s forwards ease-in-out;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    /* Ensuring compatibility for browsers blocking trackers */
     @media (max-width: 768px) {
       body {
         font-size: 14px;
@@ -146,44 +90,50 @@
   </style>
 </head>
 <body>
-  <div class="language-list">
-    <h2>My name is Anjney</h2>
-    <h2 class="phags-pa">ᠮᠡᠷᠡ ᠨᠡᠮᠡ ᠠᠨᠵᠡᠢ ᠪᠡᠷᠡᠩᠵᠢᠭ ᠰᠢᠳᠠᠨᠢ ᠠᠶᠢᠢᠢ ᠠᠢᠢᠡᠯᠡᠨ</h2> <!-- Phags-pa -->
-    <h2 class="japanese">私の名前はアーンジェイです、私は東京に住んでいます。</h2> <!-- Japanese -->
-    <h2 class="korean">제 이름은 안제이입니다. 저는 서울에서 살고 있습니다.</h2> <!-- Korean -->
-    <h2 class="hindi">मेरा नाम अंजने है। मैं भारत से हूँ。</h2> <!-- Hindi -->
-    <h2 class="chinese">我的名字是安杰，我住在中国。</h2> <!-- Simplified Chinese -->
-  </div>
-  <p>I am a "professional programmer" and I play guitar at the Trinity Music College of London.</p>
-  <p>Additionally, I am an active participant in Science Olympiad events such as Experimental Design, Reach for the Stars, and Disease Detectives. These experiences have honed my analytical and problem-solving skills.</p>
-  <p>As a Math Club member, I have developed advanced mathematical reasoning, achieving a high RIT score of 259 in Operations and Algebraic Thinking.</p>
-  <p>I also compete in the First Lego League, which emphasizes teamwork, innovation, and programming expertise.</p>
-  <p>I attend Ladue Middle School, a highly-regarded public middle school in Saint Louis, Missouri, serving 1,018 students in grades 6-8. It is part of the Ladue School District, which is ranked 8th out of 386 districts in the state and has a 5-star rating from SchoolDigger.</p>
-  <p>I am a world-class Chat Gpter</p>
-  <p>My achievements include:</p>
-
-  <ul>
-    <li>Citizenship Honor Roll 2024</li>
-    <li>Academic Honor Roll 2024</li>
-    <li>Perfect Attendance 2024</li>
-    <li>Network Chuck Pentest Certificate 2023</li>
-    <li>1st Place in Creve Coeur Arbor Day Art Contest 2023</li>
-    <li>Merit in Trinity School of Music London 2024</li>
-  </ul>
-  <p>Work Experience:</p>
-  <ul>
-    <li>Founder and Teacher at Guitar Foundation (10/24 - Current): Teaching young kids how to play guitar</li>
-    <li>Lemonade Stand (7/23)</li>
-    <li>Lawn Mowing (2020-2022)</li>
-  </ul>
-  <p>Education and Training:</p>
-  <ul>
-    <li>Ladue Fifth Grade Center - Math Facts Scholar, Spelling Bee Participant</li>
-    <li>Spoede Elementary</li>
-    <li>Andrews Academy</li>
-    <li>Currently in Ladue Middle School and its Science Olympiad team</li>
-    <li>Currently in Network Chuck Academy</li>
-    <li>JA BizTown Financial Literacy Program</li>
-  </ul>
+  <section>
+    <h1 class="animated">My name is Anjney</h1>
+    <h2 class="hindi animated">मेरा नाम अंजने है।</h2>
+  </section>
+  <section>
+    <p class="animated">I am a "professional programmer" and I play guitar at the Trinity Music College of London.</p>
+    <p class="animated">Additionally, I am an active participant in Science Olympiad events such as Experimental Design, Reach for the Stars, and Disease Detectives. These experiences have honed my analytical and problem-solving skills.</p>
+  </section>
+  <section>
+    <p class="animated">As a Math Club member, I have developed advanced mathematical reasoning, achieving a high RIT score of 259 in Operations and Algebraic Thinking.</p>
+    <p class="animated">I also compete in the First Lego League, which emphasizes teamwork, innovation, and programming expertise.</p>
+  </section>
+  <section>
+    <p class="animated">I attend Ladue Middle School, a highly-regarded public middle school in Saint Louis, Missouri, serving 1,018 students in grades 6-8. It is part of the Ladue School District, which is ranked 8th out of 386 districts in the state and has a 5-star rating from SchoolDigger.</p>
+  </section>
+  <section>
+    <p class="animated">My achievements include:</p>
+    <ul class="animated">
+      <li>Citizenship Honor Roll 2024</li>
+      <li>Academic Honor Roll 2024</li>
+      <li>Perfect Attendance 2024</li>
+      <li>Network Chuck Pentest Certificate 2023</li>
+      <li>1st Place in Creve Coeur Arbor Day Art Contest 2023</li>
+      <li>Merit in Trinity School of Music London 2024</li>
+    </ul>
+  </section>
+  <section>
+    <p class="animated">Work Experience:</p>
+    <ul class="animated">
+      <li>Founder and Teacher at Guitar Foundation (10/24 - Current): Teaching young kids how to play guitar</li>
+      <li>Lemonade Stand (7/23)</li>
+      <li>Lawn Mowing (2020-2022)</li>
+    </ul>
+  </section>
+  <section>
+    <p class="animated">Education and Training:</p>
+    <ul class="animated">
+      <li>Ladue Fifth Grade Center - Math Facts Scholar, Spelling Bee Participant</li>
+      <li>Spoede Elementary</li>
+      <li>Andrews Academy</li>
+      <li>Currently in Ladue Middle School and its Science Olympiad team</li>
+      <li>Currently in Network Chuck Academy</li>
+      <li>JA BizTown Financial Literacy Program</li>
+    </ul>
+  </section>
 </body>
 </html>
