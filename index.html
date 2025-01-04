@@ -21,20 +21,22 @@
     body, html {
       height: 100%;
       display: flex;
-      flex-direction: row;
       justify-content: flex-start;
       align-items: center;
       font-family: Arial, sans-serif;
-      min-height: 100vh;
+      overflow: hidden;
       background-color: #f8f9fa;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
     }
 
     section {
-      scroll-snap-align: start;
       flex: none;
-      min-width: 100%;
+      width: 100vw;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -42,6 +44,15 @@
       align-items: center;
       padding: 20px;
       transition: transform 0.5s ease;
+      scroll-snap-align: start;
+    }
+
+    section:nth-child(even) {
+      background-color: #e9ecef;
+    }
+
+    section:nth-child(odd) {
+      background-color: #ffffff;
     }
 
     h1, h2, p, ul {
@@ -53,14 +64,6 @@
       text-align: left;
       width: 80%;
       padding-left: 20px;
-    }
-
-    section:nth-child(even) {
-      background-color: #e9ecef;
-    }
-
-    section:nth-child(odd) {
-      background-color: #ffffff;
     }
 
     .hindi {
@@ -87,53 +90,169 @@
         font-size: 14px;
       }
     }
+
+    .hamburger {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 100%;
+      height: 4px;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      height: 100%;
+      background-color: white;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px;
+      transition: left 0.3s ease;
+    }
+
+    .menu.open {
+      left: 0;
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      width: 100%;
+    }
+
+    .menu ul li {
+      padding: 10px;
+      margin: 5px 0;
+      text-align: center;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .command-line {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      width: 80%;
+      max-width: 600px;
+      background-color: black;
+      color: lime;
+      font-family: monospace;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .command-line .loading {
+      width: 0;
+      height: 5px;
+      background-color: lime;
+      margin-top: 5px;
+      animation: load 3s linear forwards;
+    }
+
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+
+    img {
+      max-width: 100px;
+      margin: 10px;
+    }
   </style>
 </head>
 <body>
-  <section>
-    <h1 class="animated">My name is Anjney</h1>
-    <h2 class="hindi animated">मेरा नाम अंजने है।</h2>
-  </section>
-  <section>
-    <p class="animated">I am a "professional programmer" and I play guitar at the Trinity Music College of London.</p>
-    <p class="animated">Additionally, I am an active participant in Science Olympiad events such as Experimental Design, Reach for the Stars, and Disease Detectives. These experiences have honed my analytical and problem-solving skills.</p>
-  </section>
-  <section>
-    <p class="animated">As a Math Club member, I have developed advanced mathematical reasoning, achieving a high RIT score of 259 in Operations and Algebraic Thinking.</p>
-    <p class="animated">I also compete in the First Lego League, which emphasizes teamwork, innovation, and programming expertise.</p>
-  </section>
-  <section>
-    <p class="animated">I attend Ladue Middle School, a highly-regarded public middle school in Saint Louis, Missouri, serving 1,018 students in grades 6-8. It is part of the Ladue School District, which is ranked 8th out of 386 districts in the state and has a 5-star rating from SchoolDigger.</p>
-  </section>
-  <section>
-    <p class="animated">My achievements include:</p>
-    <ul class="animated">
-      <li>Citizenship Honor Roll 2024</li>
-      <li>Academic Honor Roll 2024</li>
-      <li>Perfect Attendance 2024</li>
-      <li>Network Chuck Pentest Certificate 2023</li>
-      <li>1st Place in Creve Coeur Arbor Day Art Contest 2023</li>
-      <li>Merit in Trinity School of Music London 2024</li>
+  <div class="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="menu">
+    <h2>Volunteering Dates</h2>
+    <ul>
+      <li>10/15/2024 - Tree Planting</li>
+      <li>11/20/2024 - Beach Cleanup</li>
+      <li>12/05/2024 - Food Drive</li>
     </ul>
-  </section>
-  <section>
-    <p class="animated">Work Experience:</p>
-    <ul class="animated">
-      <li>Founder and Teacher at Guitar Foundation (10/24 - Current): Teaching young kids how to play guitar</li>
-      <li>Lemonade Stand (7/23)</li>
-      <li>Lawn Mowing (2020-2022)</li>
-    </ul>
-  </section>
-  <section>
-    <p class="animated">Education and Training:</p>
-    <ul class="animated">
-      <li>Ladue Fifth Grade Center - Math Facts Scholar, Spelling Bee Participant</li>
-      <li>Spoede Elementary</li>
-      <li>Andrews Academy</li>
-      <li>Currently in Ladue Middle School and its Science Olympiad team</li>
-      <li>Currently in Network Chuck Academy</li>
-      <li>JA BizTown Financial Literacy Program</li>
-    </ul>
-  </section>
+  </div>
+  <div class="container">
+    <section>
+      <h1 class="animated">My name is Anjney</h1>
+      <h2 class="hindi animated">मेरा नाम अंजने है।</h2>
+    </section>
+    <section>
+      <p class="animated">I am a "professional programmer" and I play guitar at the Trinity Music College of London.</p>
+      <p class="animated">Additionally, I am an active participant in Science Olympiad events such as Experimental Design, Reach for the Stars, and Disease Detectives. These experiences have honed my analytical and problem-solving skills.</p>
+    </section>
+    <section>
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/a8/Ladue_Schools_Logo.png" alt="Ladue School Logo">
+      <p class="animated">I attend Ladue Middle School, a highly-regarded public middle school in Saint Louis, Missouri, serving 1,018 students in grades 6-8. It is part of the Ladue School District, which is ranked 8th out of 386 districts in the state and has a 5-star rating from SchoolDigger.</p>
+    </section>
+    <section>
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/da/Junior_Achievement_Logo.png" alt="Junior Achievement Logo">
+      <p class="animated">My achievements include:</p>
+      <ul class="animated">
+        <li>Citizenship Honor Roll 2024</li>
+        <li>Academic Honor Roll 2024</li>
+        <li>Perfect Attendance 2024</li>
+        <li>Network Chuck Pentest Certificate 2023</li>
+        <li>1st Place in Creve Coeur Arbor Day Art Contest 2023</li>
+        <li>Merit in Trinity School of Music London 2024</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Platforms</h2>
+      <p>I use Windows, Ubuntu, Debian, AmogOS, and other Linux distros but dislike Apple.</p>
+    </section>
+    <section>
+      <h2>Languages</h2>
+      <p>Hindi, Spanish, and English.</p>
+    </section>
+    <section>
+      <h2>Software Languages</h2>
+      <p>HTML, Bash, and JavaScript.</p>
+    </section>
+  </div>
+  <div class="command-line">
+    <p>Running: sudo apt update...</p>
+    <div class="loading"></div>
+  </div>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+
+    const container = document.querySelector('.container');
+    window.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      container.scrollBy({
+        left: e.deltaY,
+        behavior: 'smooth',
+      });
+    });
+  </script>
 </body>
 </html>
